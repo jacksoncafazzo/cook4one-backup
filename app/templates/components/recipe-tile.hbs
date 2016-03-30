@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="recipe-display">
+    <img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
+    <h1>{{recipe.name}}</h1>
+    <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
+  </div>
+  <div class="servings">
+    <p><strong>Serves:</strong> {{recipe.servings}}</p>
+  </div>
+  {{#if areDirectionsShowing }}
+    <hr>
+    <h4>Directions</h4>
+    <div class="recipe-directions">
+      <p {{action 'directionsHide'}}>{{recipe.directions}}</p>
+    </div>
+  {{else}}
+    <button {{action 'directionsShow'}}>Show Directions</button>
+  {{/if}}
+  <button {{action 'delete' recipe}}>Delete Recipe</button>
+</div>

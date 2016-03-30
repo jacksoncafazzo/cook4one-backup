@@ -1,0 +1,17 @@
+<h2>Recipes</h2>
+
+<ul>
+  {{#each model.recipes as |recipe|}}
+    {{recipe-tile recipe=recipe}}
+  {{/each}}
+</ul>
+
+<h3> Ingredients </h3>
+
+<ul>
+  {{#each model.ingredients as |ingredient|}}
+    <li>{{#link-to 'ingredient' ingredient.id}}{{ingredient.measurement}} {{ingredient.units}} of {{ingredient.name}}</li>
+    {{/each}}
+</ul>
+
+{{new-ingredient saveIngredient="saveIngredient"}}
