@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-  return this.store.findRecord('recipe', params.ingredient_id);
+  return this.store.findRecord('recipe', params.recipe_id);
   },
   save3(params) {
     var newIngredient = this.store.createRecord('ingredient', params);

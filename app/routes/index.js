@@ -13,9 +13,18 @@ export default Ember.Route.extend({
       newIngredient.save();
       this.transitionTo('index');
     },
+    saveRecipe3(params) {
+      var newRecipe = this.store.createRecord('recipe', params);
+      newRecipe.save();
+      this.transitionTo('index');
+    },
 
-    destroyRental(ingredient) {
+    destroyIngredient(ingredient) {
       ingredient.destroyRecord();
+      this.transitionTo('index');
+    },
+    destroyRecipe(recipe) {
+      recipe.destroyRecord();
       this.transitionTo('index');
     }
   }

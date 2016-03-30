@@ -2,15 +2,17 @@
 
 <ul>
   {{#each model.recipes as |recipe|}}
-    {{recipe-tile recipe=recipe}}
+    {{recipe-tile recipe=recipe destroyRecipe="destroyRecipe"}}
   {{/each}}
 </ul>
+
+{{new-recipe saveRecipe2="saveRecipe3"}}
 
 <h3> Ingredients </h3>
 
 <ul>
   {{#each model.ingredients as |ingredient|}}
-    <li>{{#link-to 'ingredient' ingredient.id}}{{ingredient.measurement}} {{ingredient.units}} of {{ingredient.name}}</li>
+    <li>{{#link-to 'ingredient' ingredient.id}}{{ingredient-tile ingredient=ingredient destroyIngredient="destroyIngredient"}}{{/link-to}}</li>
     {{/each}}
 </ul>
 

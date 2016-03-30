@@ -1,5 +1,7 @@
-<h3>Ingredients</h3>
+<h3>Ingredient</h3>
 
-{{ingredient-tile ingredient=model destroyIngredient="destroyIngredient"}}
+<p>{{model.measurement}} {{model.units}} of {{model.name}}</p>
+<p>Sourced from / Notes: {{model.source}}</p>
+<p>Recipe: {{model.recipe.name}}</p>
 
-{{new-recipe save2="save3" ingredient=model}}
+<button {{action 'delete' ingredient}}>Delete Ingredient</button>
