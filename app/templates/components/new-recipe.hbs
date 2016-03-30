@@ -13,7 +13,7 @@
         </div>
 
         <div class="form-group">
-          <label for="cook-time">Number of Bedrooms</label>
+          <label for="cook-time">Cook Time</label>
           {{input value=cook_time id="cook-time"}}
         </div>
 
@@ -26,5 +26,5 @@
       </form>
     </div>
 {{else}}
-    <button {{action 'recipeFormShow'}}>New Recipe</button>
+    <button {{action 'recipeFormShow'}}>Create a new Recipe</button>
 {{/if}}

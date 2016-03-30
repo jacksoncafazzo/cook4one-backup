@@ -8,6 +8,9 @@ export default Ember.Component.extend({
             this.sendAction('destroyRecipe', recipe);
       }
     },
+    update(recipe, params) {
+      this.sendAction('update', recipe, params);
+    },
     directionsShow: function() {
       this.set('areDirectionsShowing', true);
     },

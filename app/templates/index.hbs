@@ -1,19 +1,5 @@
-<h2>Recipes</h2>
-
-<ul>
-  {{#each model.recipes as |recipe|}}
-    {{recipe-tile recipe=recipe destroyRecipe="destroyRecipe"}}
-  {{/each}}
-</ul>
-
-{{new-recipe saveRecipe2="saveRecipe3"}}
-
-<h3> Ingredients </h3>
-
-<ul>
-  {{#each model.ingredients as |ingredient|}}
-    <li>{{#link-to 'ingredient' ingredient.id}}{{ingredient-tile ingredient=ingredient destroyIngredient="destroyIngredient"}}{{/link-to}}</li>
-    {{/each}}
-</ul>
-
-{{new-ingredient saveIngredient="saveIngredient"}}
+<h2>Recipes:</h2>
+{{#each model.recipes as |recipe|}}
+  {{#link-to 'recipe' recipe.id}}{{recipe-tile recipe=recipe update="update" destroyRecipe="destroyRecipe"}}{{/link-to}}
+{{/each}}
+{{new-recipe save2="save3" recipe=model}}

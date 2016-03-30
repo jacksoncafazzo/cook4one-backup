@@ -12,10 +12,9 @@ export default Ember.Component.extend({
         units: this.get('units'),
         name: this.get('name'),
         source: this.get('source'),
-        recipe: this.get('recipe'),
       };
       this.set('addNewIngredient', false);
       this.sendAction('save2', params);
     }
-  } 
+  }
 });
