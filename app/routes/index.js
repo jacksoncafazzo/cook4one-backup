@@ -4,7 +4,8 @@ export default Ember.Route.extend({
   model(){
     return Ember.RSVP.hash({
       recipes: this.store.findAll('recipe'),
-      ingredients: this.store.findAll('ingredient')
+      ingredients: this.store.findAll('ingredient'),
+      userIngredients: this.store.findAll('userIngredients')
     });
   },
   actions: {
@@ -15,6 +16,14 @@ export default Ember.Route.extend({
         }
       });
       recipe.save();
+      this.transitionTo('index');
+    },
+    updateUserIngredients() {
+      // Object.keys(params).forEach(function(param) {
+      //   Object.key(param).forEach(function(key) {
+      //   this.store.createRecord('userIngredient', key,params[key]);
+      //   });
+      // });
       this.transitionTo('index');
     },
     saveRecipe(params) {

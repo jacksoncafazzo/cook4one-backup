@@ -8,16 +8,19 @@
   <div class="servings">
     <p><strong>Serves:</strong> {{recipe.servings}}</p>
   </div>
-  <ul>
-  {{#each recipe.ingredients as |ingredient|}}
-    {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
-  {{/each}}
-  </ul>
-    <hr>
-    <h4>Directions</h4>
-    <div class="recipe-directions">
-      <p>{{recipe.directions}}</p>
-    </div>
+  <div class="ingredients">
+    <ul>
+      {{#each recipe.ingredients as |ingredient|}}
+      {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
+      {{/each}}
+    </ul>
+  </div>
+  <hr>
+  <h4>Directions</h4>
+  <div class="recipe-directions">
+    <p>{{recipe.directions}}</p>
+  </div>
+
   {{recipe-cook4one recipe=recipe cook4one2="cook4one3"}}
 
   {{update-recipe recipe=recipe update="update"}}

@@ -1,7 +1,7 @@
-<h2>Recipes:</h2>
+{{new-recipe save2="saveRecipe"}}
+<h3>Recipes:</h3>
 <ul>
 {{#each model.recipes as |recipe|}}
-  {{recipe-tile recipe=recipe update="update" destroyRecipe="destroyRecipe"}}
+  {{recipe-tile recipe=recipe  update="update" destroyRecipe="destroyRecipe" cook4one4="updateUserIngredients"}}
 {{/each}}
 </ul>
-{{new-recipe save2="saveRecipe"}}

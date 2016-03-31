@@ -5,11 +5,17 @@
   <div class="servings">
     <p><strong>Serves:</strong> {{recipe.servings}}</p>
   </div>
-  <ul>
-  {{#each recipe.ingredients as |ingredient|}}
-    {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
-  {{/each}}
-  </ul>
+  <div class="col-md-6">
+    <ul>
+      {{#each recipe.ingredients as |ingredient|}}
+      {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    {{recipe-cook4one recipe=recipe cook4one2="cook4one3"}}
+  </div>
+
   <!-- {{new-ingredient saveIngredient3="saveIngredient2"}} -->
   {{#if areDirectionsShowing }}
     <hr>
@@ -18,7 +24,9 @@
       <p {{action 'directionsHide'}}>{{recipe.directions}}</p>
     </div>
   {{else}}
-    <button {{action 'directionsShow'}}>Show Directions</button>
+    <div class="show-directions">
+      <button {{action 'directionsShow'}}>Show Directions</button>
+    </div>
   {{/if}}
   {{update-recipe recipe=recipe update="update"}}
   <button {{action 'delete' recipe}}>Delete Recipe</button>
