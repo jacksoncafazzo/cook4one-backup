@@ -8,20 +8,6 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    save3(params) {
-      var newRecipe = this.store.createRecord('recipe', params);
-      newRecipe.save();
-      this.transitionTo('index');
-    },
-
-    destroyIngredient(ingredient) {
-      ingredient.destroyRecord();
-      this.transitionTo('index');
-    },
-    destroyRecipe(recipe) {
-      recipe.destroyRecord();
-      this.transitionTo('index');
-    },
     update(recipe, params) {
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
@@ -31,5 +17,26 @@ export default Ember.Route.extend({
       recipe.save();
       this.transitionTo('index');
     },
+    saveRecipe(params) {
+      var newRecipe = this.store.createRecord('recipe', params);
+      newRecipe.save();
+      console.log(newRecipe);
+      this.transitionTo('index');
+    },
+    saveIngredient(params) {
+      var newIngredient = this.store.createRecord('ingredient', params);
+      newIngredient.save();
+      console.log("this is your new ingredient", newIngredient);
+      this.transitionTo('index');
+    },
+    destroyIngredient(ingredient) {
+      ingredient.destroyRecord();
+      this.transitionTo('index');
+    },
+    destroyRecipe(recipe) {
+      recipe.destroyRecord();
+      this.transitionTo('index');
+    }
+
   }
 });

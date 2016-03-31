@@ -1,0 +1,22 @@
+<div class="row">
+  <h2>This is the recipe you are looking for...</h2>
+  <div class="recipe-display">
+    {{#link-to 'recipe' recipe.id}}<img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
+    <h1>{{recipe.name}}</h1>{{/link-to}}
+    <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
+  </div>
+  <div class="servings">
+    <p><strong>Serves:</strong> {{recipe.servings}}</p>
+  </div>
+  {{#each recipe.ingredients as |ingredient|}}
+    <li>{{ingredient.measurement}} {{ingredient.units}} {{#link-to 'ingredient' ingredient.id}}{{ingredient.name}}{{/link-to}}</li>
+  {{/each}}
+    <hr>
+    <h4>Directions</h4>
+    <div class="recipe-directions">
+      <p>{{recipe.directions}}</p>
+    </div>
+  {{update-recipe recipe=recipe update="update"}}
+  <button {{action 'delete' recipe}}>Delete Recipe</button>
+</div>
+{{#link-to 'index'}}Back Home{{/link-to}}

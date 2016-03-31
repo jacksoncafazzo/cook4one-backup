@@ -1,16 +1,16 @@
-<div class="row">
-  <div class="recipe-display">
-    {{#link-to 'recipe' recipe_id}}<img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
-    <h1>{{recipe.name}}</h1>{{/link-to}}
-    <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
-  </div>
+<li>
+  {{#link-to 'recipe' recipe.id}}<img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
+  <h1>{{recipe.name}}</h1>{{/link-to}}
+  <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
   <div class="servings">
     <p><strong>Serves:</strong> {{recipe.servings}}</p>
   </div>
+  <ul>
   {{#each recipe.ingredients as |ingredient|}}
-    <li>{{ingredient.measurement}} {{ingredient.units}} {{#link-to 'ingredient' ingredient.id}}{{ingredient.name}}{{/link-to}}</li>
+    {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
   {{/each}}
-  {{new-ingredient saveIngredient="saveIngredient"}}
+  </ul>
+  <!-- {{new-ingredient saveIngredient3="saveIngredient2"}} -->
   {{#if areDirectionsShowing }}
     <hr>
     <h4>Directions</h4>
@@ -22,4 +22,4 @@
   {{/if}}
   {{update-recipe recipe=recipe update="update"}}
   <button {{action 'delete' recipe}}>Delete Recipe</button>
-</div>
+</li>

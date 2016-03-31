@@ -27,9 +27,9 @@
           {{input value=image id="image" placeholder=recipe.image}}
         </div>
 
-        <button {{action 'update' recipe}}>Save</button>
+        <button {{action 'update' recipe}}>Update it!</button>
       </form>
     </div>
 {{else}}
-    <button {{action 'updateRecipeForm'}}>Update</button>
+    <button {{action 'updateRecipeForm'}}>Show Update Form</button>
 {{/if}}

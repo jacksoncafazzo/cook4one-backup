@@ -14,7 +14,11 @@ export default Ember.Component.extend({
         image: this.get('image'),
       };
       this.set('addNewRecipe', false);
-      this.sendAction('save2', params);
+      this.set('name', "");
+      this.set('servings', "");
+      this.set('cook_time', "");
+      this.set('image', "");
+      this.sendAction('saveRecipe', params);
     }
   }
 });
