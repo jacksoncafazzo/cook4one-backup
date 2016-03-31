@@ -1,7 +1,7 @@
 <form>
   <div class="form-group">
-    <label for="servings">How many servings?</label>
-    {{input value=1 id="user-servings"}}
+    <label for="user-servings">How many servings?</label>
+    {{input value=user-servings id="user-servings" placeholder=1}}
   </div>
-  <button action="cook4one" recipe>cook4one</button>
+  <button {{action "cook4one1" recipe}}>cook4one</button>
 </form>

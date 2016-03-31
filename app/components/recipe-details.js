@@ -10,6 +10,10 @@ export default Ember.Component.extend({
       this.sendAction('destroyRecipe', recipe);
       }
     },
-  
+    cook4One3(recipe, userServings) {
+      alert('you got to recipe-details!');
+      this.transitionTo('recipe', recipe, userServings);
+    }
+
   }
 });
