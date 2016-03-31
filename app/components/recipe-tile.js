@@ -16,9 +16,7 @@ export default Ember.Component.extend({
     },
     directionsHide: function() {
       this.set('areDirectionsShowing', false);
-    },
-    cook4one3(recipe) {
-      this.sendAction('cook4One4', recipe);
     }
+
   }
 });

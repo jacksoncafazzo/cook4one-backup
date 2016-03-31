@@ -16,10 +16,6 @@ export default Ember.Route.extend({
     },
     update(recipe, params) {
       this.sendAction('update', recipe, params);
-    },
-    cook4one4() {
-      alert("OH BOY!");
     }
-
   }
 });

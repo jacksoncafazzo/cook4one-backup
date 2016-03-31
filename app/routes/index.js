@@ -18,14 +18,6 @@ export default Ember.Route.extend({
       recipe.save();
       this.transitionTo('index');
     },
-    updateUserIngredients() {
-      // Object.keys(params).forEach(function(param) {
-      //   Object.key(param).forEach(function(key) {
-      //   this.store.createRecord('userIngredient', key,params[key]);
-      //   });
-      // });
-      this.transitionTo('index');
-    },
     saveRecipe(params) {
       var newRecipe = this.store.createRecord('recipe', params);
       newRecipe.save();
