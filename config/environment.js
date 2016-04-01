@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'cook4one',
+    modulePrefix: 'cook4one-ember',
     environment: environment,
     firebase: 'https://cook4one.firebaseio.com/',
     baseURL: '/',
@@ -50,6 +50,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.locationType = 'hash';
+    ENV.baseURL = '/cook4one/';
 
   }
 
