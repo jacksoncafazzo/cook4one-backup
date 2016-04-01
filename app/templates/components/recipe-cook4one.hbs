@@ -1,12 +1,16 @@
 <form>
   <div class="form-group">
-    <label for="user-servings">How many servings?</label>
-    {{input value=user-servings class="user-servings" placeholder=1}}
+
+    {{input value=user-servings class="user-servings" placeholder=1  }}
+    <label {{action 'showCook4one'}} for="user-servings">Click here to show updated servings</label>
   </div>
-  <ul class="user-ingredients">
-  {{#each recipe.ingredients as |ingredient|}}
-  <li>{{cook4one ingredient.measurement recipe.servings user-servings}} {{ingredient.units}} {{ingredient.source}} {{ingredient.name}}</li>
-  {{/each}}
-  </ul>
-  <button {{action "cook4one1" recipe}}>cook4one</button>
+  {{#if isCook4One}}
+    <ul class="user-ingredients">
+      {{#each recipe.ingredients as |ingredient|}}
+      <li>{{cook4one ingredient.measurement recipe.servings user-servings}} {{ingredient.units}} {{ingredient.source}} {{ingredient.name}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+  {{/if}}
+
 </form>

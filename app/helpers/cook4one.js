@@ -7,6 +7,6 @@ export default Ember.Helper.helper(function(params/*, hash*/) {
 // console.log("measurement", measurement);
 // console.log("userServings", userServings);
 //   console.log((measurement / servings) * userServings);
-  return parseFloat((measurement / servings) * userServings).toFixed(2);
+  return Math.round(((measurement / servings) * userServings) * 100)/100;
   }
 );
