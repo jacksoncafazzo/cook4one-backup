@@ -1,7 +1,0 @@
-{{new-recipe save2="saveRecipe"}}
-<h3>Previous Recipes:</h3>
-<ul>
-{{#each model.recipes as |recipe|}}
-  {{recipe-tile recipe=recipe  update="update" destroyRecipe="destroyRecipe"}}
-{{/each}}
-</ul>
