@@ -5,10 +5,15 @@ body {
 ul {
   list-style: none;
   text-align: center;
+  padding-left: 0px;
 }
 
+.recipe-display {
+  padding-left: 20px;
+}
 .recipe-image {
   width: 400px;
+  float: left;
 }
 
 .ingredient {
@@ -18,6 +23,17 @@ ul {
 
 .ingredients {
   padding-bottom: 20px;
+
+}
+
+.ingredients-index {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.ingredients-index li {
+  text-align: left;
+
 }
 
 .show-directions {
@@ -31,4 +47,33 @@ button {
 
 .user-ingredients {
   text-align: left;
+}
+
+.calculator {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.show-me {
+  border-width: 1px;
+  border-style: solid;
+  width: 155px;
+
+}
+
+.show-me p {
+  padding-top: 7px;
+  padding-left: 4px;
+}
+
+.show-me h4 {
+}
+
+.ingredient {
+ text-align: center;
+}
+
+.cook {
+  display: flex;
+  justify-content: center;
 }

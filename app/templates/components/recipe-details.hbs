@@ -1,13 +1,12 @@
 <div class="row">
-  <h2>This is the recipe you are looking for...</h2>
   <div class="recipe-display">
-    {{#link-to 'recipe' recipe.id}}<img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
-    <h1>{{recipe.name}}</h1>{{/link-to}}
+    <h1>{{recipe.name}}</h1><img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
     <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
-  </div>
-  <div class="servings">
     <p><strong>Serves:</strong> {{recipe.servings}}</p>
   </div>
+</div>
+<div class="row">
+
   <div class="ingredients">
     <ul>
       {{#each recipe.ingredients as |ingredient|}}
@@ -15,9 +14,9 @@
       {{/each}}
     </ul>
   </div>
-  <hr>
-  <h4>Directions</h4>
+</div>
   <div class="recipe-directions">
+    <h4>Directions:</h4>
     <p>{{recipe.directions}}</p>
   </div>
 

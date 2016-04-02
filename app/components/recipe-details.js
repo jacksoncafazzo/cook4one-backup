@@ -10,6 +10,5 @@ export default Ember.Component.extend({
       this.sendAction('destroyRecipe', recipe);
       }
     },
-    
   }
 });

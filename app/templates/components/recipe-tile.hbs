@@ -1,11 +1,12 @@
 <li>
-  {{#link-to 'recipe' recipe.id}}<img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
-  <h1>{{recipe.name}}</h1>{{/link-to}}
-  <p class="cook-time"><strong>Cook Time:</strong> {{recipe.cook_time}}</p>
-  <div class="servings">
-    <p><strong>Serves:</strong> {{recipe.servings}}</p>
+  <div class="row recipe-tile">
+    {{#link-to 'recipe' recipe.id}}<h1>{{recipe.name}}</h1><img class="recipe-image" src={{recipe.image}} alt="Picture of {{recipe.name}}"/>
+    {{/link-to}}
+    <br><br>
+    <h4 class="cook"><strong>Cook Time:  </strong> {{recipe.cook_time}}</h4><br>
+    <h4 class="cook"><strong>Serves:</strong>  {{recipe.servings}}</h4>
   </div>
-  <div class="col-md-6">
+  <div class="row ingredients-index">
     <ul>
       {{#each recipe.ingredients as |ingredient|}}
       {{ingredient-tile ingredient=ingredient update="update" destroyIngredient="destroyIngredient"}}
@@ -25,7 +26,7 @@
     </div>
   {{else}}
     <div class="show-directions">
-      <button {{action 'directionsShow'}}>Show Directions</button>
+      <button {{action 'directionsShow'}}>Show Recipe Directions</button>
     </div>
   {{/if}}
   {{update-recipe recipe=recipe update="update"}}
